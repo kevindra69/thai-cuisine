@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Som Tam - Thai Papaya Salad</title>
+    <title>Thai Cuisine - Authentic Recipes</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,98 +12,212 @@
 <body>
     <header class="hero">
         <div class="hero-content">
-            <h1 class="animate-fade-in">Som Tam</h1>
-            <p class="subtitle animate-fade-in">Thai Green Papaya Salad</p>
+            <h1 class="animate-fade-in">Thai Cuisine</h1>
+            <p class="subtitle animate-fade-in">Authentic Thai Recipes</p>
         </div>
     </header>
 
     <main>
-        <section class="recipe-intro">
+        <section class="recipe-selection">
             <div class="container">
-                <h2>About Som Tam</h2>
-                <p>Som Tam is a spicy green papaya salad that's one of Thailand's most famous dishes. This refreshing and zesty salad combines the perfect balance of sweet, sour, salty, and spicy flavors.</p>
-            </div>
-        </section>
-
-        <section class="ingredients">
-            <div class="container">
-                <h2>Ingredients</h2>
-                <div class="ingredients-grid">
-                    <div class="ingredient-card animate-slide-up">
-                        <h3>Main Ingredients</h3>
-                        <ul>
-                            <li>1 medium green papaya, shredded</li>
-                            <li>2 cups long beans, cut into 2-inch pieces</li>
-                            <li>1 cup cherry tomatoes, halved</li>
-                            <li>1/2 cup roasted peanuts</li>
-                        </ul>
+                <h2>Our Recipes</h2>
+                <div class="recipe-grid">
+                    <div class="recipe-card animate-slide-up" id="som-tam-card">
+                        <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                            <div class="recipe-overlay">
+                                <h3>Som Tam</h3>
+                                <p>Thai Green Papaya Salad</p>
+                                <button class="view-recipe-btn" data-recipe="som-tam">View Recipe</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ingredient-card animate-slide-up">
-                        <h3>Dressing</h3>
-                        <ul>
-                            <li>3-4 Thai chilies</li>
-                            <li>3 cloves garlic</li>
-                            <li>2 tbsp palm sugar</li>
-                            <li>2 tbsp fish sauce</li>
-                            <li>2 tbsp lime juice</li>
-                        </ul>
+                    <div class="recipe-card animate-slide-up" id="jasmine-rice-card">
+                        <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                            <div class="recipe-overlay">
+                                <h3>Jasmine Rice with Prawns</h3>
+                                <p>Thai Sautéed Style</p>
+                                <button class="view-recipe-btn" data-recipe="jasmine-rice">View Recipe</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="instructions">
+        <section class="recipe-details" id="som-tam-recipe">
             <div class="container">
-                <h2>Instructions</h2>
-                <div class="steps">
-                    <div class="step animate-slide-up">
-                        <span class="step-number">1</span>
-                        <p>Peel and shred the green papaya using a julienne peeler or mandoline.</p>
-                    </div>
-                    <div class="step animate-slide-up">
-                        <span class="step-number">2</span>
-                        <p>In a mortar and pestle, pound the garlic and chilies until crushed.</p>
-                    </div>
-                    <div class="step animate-slide-up">
-                        <span class="step-number">3</span>
-                        <p>Add palm sugar, fish sauce, and lime juice. Mix well.</p>
-                    </div>
-                    <div class="step animate-slide-up">
-                        <span class="step-number">4</span>
-                        <p>Combine the dressing with shredded papaya, long beans, and tomatoes.</p>
-                    </div>
-                    <div class="step animate-slide-up">
-                        <span class="step-number">5</span>
-                        <p>Garnish with roasted peanuts and serve immediately.</p>
+                <h2>Som Tam - Thai Green Papaya Salad</h2>
+                <div class="recipe-intro">
+                    <p>Som Tam is a spicy green papaya salad that's one of Thailand's most famous dishes. This refreshing and zesty salad combines the perfect balance of sweet, sour, salty, and spicy flavors.</p>
+                </div>
+
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <div class="ingredients-grid">
+                        <div class="ingredient-card animate-slide-up">
+                            <h4>Main Ingredients</h4>
+                            <ul>
+                                <li>1 medium green papaya, shredded</li>
+                                <li>2 cups long beans, cut into 2-inch pieces</li>
+                                <li>1 cup cherry tomatoes, halved</li>
+                                <li>1/2 cup roasted peanuts</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-card animate-slide-up">
+                            <h4>Dressing</h4>
+                            <ul>
+                                <li>3-4 Thai chilies</li>
+                                <li>3 cloves garlic</li>
+                                <li>2 tbsp palm sugar</li>
+                                <li>2 tbsp fish sauce</li>
+                                <li>2 tbsp lime juice</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <div class="steps">
+                        <div class="step animate-slide-up">
+                            <span class="step-number">1</span>
+                            <p>Peel and shred the green papaya using a julienne peeler or mandoline.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">2</span>
+                            <p>In a mortar and pestle, pound the garlic and chilies until crushed.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">3</span>
+                            <p>Add palm sugar, fish sauce, and lime juice. Mix well.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">4</span>
+                            <p>Combine the dressing with shredded papaya, long beans, and tomatoes.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">5</span>
+                            <p>Garnish with roasted peanuts and serve immediately.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips">
+                    <h3>Pro Tips</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card animate-slide-up">
+                            <h4>Spice Level</h4>
+                            <p>Adjust the number of Thai chilies to your preferred spice level.</p>
+                        </div>
+                        <div class="tip-card animate-slide-up">
+                            <h4>Freshness</h4>
+                            <p>Serve immediately for the best texture and flavor.</p>
+                        </div>
+                        <div class="tip-card animate-slide-up">
+                            <h4>Substitutions</h4>
+                            <p>If green papaya is not available, you can use green mango as a substitute.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="back-to-recipes-btn">Back to Recipes</button>
             </div>
         </section>
 
-        <section class="tips">
+        <section class="recipe-details" id="jasmine-rice-recipe">
             <div class="container">
-                <h2>Pro Tips</h2>
-                <div class="tips-grid">
-                    <div class="tip-card animate-slide-up">
-                        <h3>Spice Level</h3>
-                        <p>Adjust the number of Thai chilies to your preferred spice level.</p>
-                    </div>
-                    <div class="tip-card animate-slide-up">
-                        <h3>Freshness</h3>
-                        <p>Serve immediately for the best texture and flavor.</p>
-                    </div>
-                    <div class="tip-card animate-slide-up">
-                        <h3>Substitutions</h3>
-                        <p>If green papaya is not available, you can use green mango as a substitute.</p>
+                <h2>Jasmine Rice with Prawns - Thai Sautéed Style</h2>
+                <div class="recipe-intro">
+                    <p>This fragrant Thai-style jasmine rice with prawns is a perfect balance of aromatic rice and succulent seafood. The dish is seasoned with traditional Thai flavors and can be prepared in under 30 minutes.</p>
+                </div>
+
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <div class="ingredients-grid">
+                        <div class="ingredient-card animate-slide-up">
+                            <h4>Main Ingredients</h4>
+                            <ul>
+                                <li>2 cups jasmine rice, rinsed and drained</li>
+                                <li>3 cups water or chicken stock</li>
+                                <li>500g large prawns, peeled and deveined</li>
+                                <li>1 cup frozen peas</li>
+                                <li>2 eggs, beaten</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-card animate-slide-up">
+                            <h4>Seasonings</h4>
+                            <ul>
+                                <li>3 cloves garlic, minced</li>
+                                <li>1 thumb-sized piece of ginger, minced</li>
+                                <li>2 tbsp fish sauce</li>
+                                <li>1 tbsp soy sauce</li>
+                                <li>1 tsp white pepper</li>
+                                <li>2 tbsp vegetable oil</li>
+                                <li>2 green onions, sliced</li>
+                                <li>1 red chili, sliced (optional)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <div class="steps">
+                        <div class="step animate-slide-up">
+                            <span class="step-number">1</span>
+                            <p>Cook the jasmine rice with water or chicken stock according to package instructions. Fluff with a fork and set aside to cool slightly.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">2</span>
+                            <p>Heat oil in a large wok or skillet over medium-high heat. Add garlic and ginger, and stir-fry for 30 seconds until fragrant.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">3</span>
+                            <p>Add the prawns and stir-fry for 2-3 minutes until they turn pink and are almost cooked through.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">4</span>
+                            <p>Push the prawns to one side of the wok and pour the beaten eggs into the empty space. Scramble the eggs until they're just set.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">5</span>
+                            <p>Add the cooked rice and peas to the wok. Stir-fry everything together for 2-3 minutes, breaking up any clumps of rice.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">6</span>
+                            <p>Season with fish sauce, soy sauce, and white pepper. Taste and adjust seasonings as needed.</p>
+                        </div>
+                        <div class="step animate-slide-up">
+                            <span class="step-number">7</span>
+                            <p>Garnish with sliced green onions and red chili if desired. Serve hot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips">
+                    <h3>Pro Tips</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card animate-slide-up">
+                            <h4>Rice Preparation</h4>
+                            <p>For best results, cook the rice a few hours ahead and let it cool completely before stir-frying.</p>
+                        </div>
+                        <div class="tip-card animate-slide-up">
+                            <h4>Prawn Selection</h4>
+                            <p>Use fresh, high-quality prawns for the best flavor. If using frozen prawns, make sure they're completely thawed and patted dry.</p>
+                        </div>
+                        <div class="tip-card animate-slide-up">
+                            <h4>Wok Technique</h4>
+                            <p>For authentic Thai-style stir-fry, use high heat and keep the ingredients moving constantly in the wok.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="back-to-recipes-btn">Back to Recipes</button>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Thai Cuisine - Authentic Som Tam Recipe</p>
+            <p>© 2024 Thai Cuisine - Authentic Thai Recipes</p>
         </div>
     </footer>
 

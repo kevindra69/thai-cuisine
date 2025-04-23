@@ -67,6 +67,103 @@ h2 {
     color: var(--primary-color);
 }
 
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Recipe Selection */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.recipe-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+}
+
+.recipe-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.recipe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.recipe-overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.recipe-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.view-recipe-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.view-recipe-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Recipe Details */
+.recipe-details {
+    display: none;
+}
+
+.recipe-details.active {
+    display: block;
+}
+
+.recipe-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 /* Ingredients Section */
 .ingredients-grid {
     display: grid;
@@ -85,11 +182,6 @@ h2 {
 
 .ingredient-card:hover {
     transform: translateY(-5px);
-}
-
-.ingredient-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
 }
 
 .ingredient-card ul {
@@ -141,9 +233,22 @@ h2 {
     text-align: center;
 }
 
-.tip-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+/* Back to Recipes Button */
+.back-to-recipes-btn {
+    display: block;
+    margin: 3rem auto 0;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-recipes-btn:hover {
+    background-color: #ff5252;
 }
 
 /* Footer */
@@ -202,5 +307,9 @@ footer {
     
     h2 {
         font-size: 2rem;
+    }
+    
+    .recipe-image {
+        height: 200px;
     }
 } 

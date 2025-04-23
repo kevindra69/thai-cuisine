@@ -21,12 +21,74 @@ document.querySelectorAll('.animate-slide-up').forEach((element, index) => {
     observer.observe(element);
 });
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+// Recipe Navigation
+document.addEventListener('DOMContentLoaded', () => {
+    const recipeSelection = document.querySelector('.recipe-selection');
+    const recipeDetails = document.querySelectorAll('.recipe-details');
+    const viewRecipeButtons = document.querySelectorAll('.view-recipe-btn');
+    const backToRecipesButtons = document.querySelectorAll('.back-to-recipes-btn');
+
+    // Function to show recipe details
+    function showRecipe(recipeId) {
+        // Hide recipe selection
+        recipeSelection.style.display = 'none';
+        
+        // Hide all recipe details
+        recipeDetails.forEach(detail => {
+            detail.classList.remove('active');
+        });
+        
+        // Show the selected recipe
+        const selectedRecipe = document.getElementById(`${recipeId}-recipe`);
+        if (selectedRecipe) {
+            selectedRecipe.classList.add('active');
+            // Scroll to top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Function to go back to recipe selection
+    function backToRecipes() {
+        // Show recipe selection
+        recipeSelection.style.display = 'block';
+        
+        // Hide all recipe details
+        recipeDetails.forEach(detail => {
+            detail.classList.remove('active');
+        });
+        
+        // Scroll to top of the page
+        window.scrollTo({
+            top: 0,
             behavior: 'smooth'
+        });
+    }
+
+    // Add click event to view recipe buttons
+    viewRecipeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const recipeId = button.getAttribute('data-recipe');
+            showRecipe(recipeId);
+        });
+    });
+
+    // Add click event to back to recipes buttons
+    backToRecipesButtons.forEach(button => {
+        button.addEventListener('click', backToRecipes);
+    });
+
+    // Add click event to recipe cards
+    document.querySelectorAll('.recipe-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Only trigger if not clicking on the button
+            if (!e.target.classList.contains('view-recipe-btn')) {
+                const recipeId = card.id.replace('-card', '');
+                showRecipe(recipeId);
+            }
         });
     });
 });
