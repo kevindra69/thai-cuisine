@@ -93,6 +93,7 @@ h4 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .recipe-card:hover {
@@ -104,6 +105,7 @@ h4 {
     background-size: cover;
     background-position: center;
     position: relative;
+    transition: opacity 0.5s ease;
 }
 
 .recipe-overlay {
@@ -119,6 +121,8 @@ h4 {
     padding: 20px;
     color: white;
     text-align: center;
+    z-index: 2;
+    transition: opacity 0.3s ease;
 }
 
 .recipe-overlay h3 {
@@ -142,10 +146,73 @@ h4 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     align-self: center;
+    z-index: 3;
 }
 
 .view-recipe-btn:hover {
     background-color: #ff5252;
+}
+
+/* Recipe Slider */
+.recipe-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.recipe-card:hover .recipe-slider {
+    opacity: 1;
+}
+
+.recipe-card:hover .recipe-image {
+    opacity: 0;
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: scale(1.1);
+}
+
+.recipe-card:hover .slider-image:nth-child(1) {
+    opacity: 1;
+    transform: scale(1);
+    animation: morphImage 12s infinite;
+}
+
+.recipe-card:hover .slider-image:nth-child(2) {
+    opacity: 1;
+    transform: scale(1);
+    animation: morphImage 12s infinite 4s;
+}
+
+.recipe-card:hover .slider-image:nth-child(3) {
+    opacity: 1;
+    transform: scale(1);
+    animation: morphImage 12s infinite 8s;
+}
+
+@keyframes morphImage {
+    0%, 33% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    34%, 100% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
 }
 
 /* Recipe Details */

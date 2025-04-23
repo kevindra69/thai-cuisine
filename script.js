@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recipeDetails = document.querySelectorAll('.recipe-details');
     const viewRecipeButtons = document.querySelectorAll('.view-recipe-btn');
     const backToRecipesButtons = document.querySelectorAll('.back-to-recipes-btn');
+    const recipeCards = document.querySelectorAll('.recipe-card');
 
     // Function to show recipe details
     function showRecipe(recipeId) {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to go back to recipe selection
+    // Function to go back to recipes
     function backToRecipes() {
         // Show recipe selection
         recipeSelection.style.display = 'block';
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     viewRecipeButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation(); // Prevent card click event
             const recipeId = button.getAttribute('data-recipe');
             showRecipe(recipeId);
         });
@@ -82,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add click event to recipe cards
-    document.querySelectorAll('.recipe-card').forEach(card => {
+    recipeCards.forEach(card => {
         card.addEventListener('click', (e) => {
             // Only trigger if not clicking on the button
             if (!e.target.classList.contains('view-recipe-btn')) {
@@ -90,6 +92,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 showRecipe(recipeId);
             }
         });
+    });
+
+    // Enhanced slider effect
+    recipeCards.forEach(card => {
+        const sliderImages = card.querySelectorAll('.slider-image');
+        
+        // Add hover effect with sound (optional)
+        card.addEventListener('mouseenter', () => {
+            // You can add a subtle sound effect here if desired
+            // const hoverSound = new Audio('hover-sound.mp3');
+            // hoverSound.volume = 0.2;
+            // hoverSound.play();
+            
+            // Add a subtle pulse animation to the card
+            card.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+        
+        // Add touch support for mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        card.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        card.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                // Swipe left - show next image
+                const currentImage = card.querySelector('.slider-image[style*="opacity: 1"]');
+                if (currentImage) {
+                    const nextImage = currentImage.nextElementSibling || sliderImages[0];
+                    currentImage.style.opacity = '0';
+                    nextImage.style.opacity = '1';
+                }
+            } else if (touchEndX > touchStartX) {
+                // Swipe right - show previous image
+                const currentImage = card.querySelector('.slider-image[style*="opacity: 1"]');
+                if (currentImage) {
+                    const prevImage = currentImage.previousElementSibling || sliderImages[sliderImages.length - 1];
+                    currentImage.style.opacity = '0';
+                    prevImage.style.opacity = '1';
+                }
+            }
+        }
     });
 });
 
